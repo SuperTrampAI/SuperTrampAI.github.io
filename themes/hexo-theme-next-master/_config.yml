@@ -141,6 +141,7 @@ social:
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
 	简书: https://www.jianshu.com/u/32468b3406de
+  GitBook : https://gitbook.supertrampai.com/
 
 social_icons:
   enable: true
