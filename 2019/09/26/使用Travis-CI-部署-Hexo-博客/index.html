@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('enter password') !== '') {
+                alert('wrong password！');
+                if (history.length === 1) {
+                    location.replace("https://supertrampai.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favcion.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favcion.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Travis_CI是什么wiki Travis 是一项托管集成服务，用于构建和测试Github上托管的软件项目 什么是继续集成：持续集成是经常合并小的代码更改的实践，而不是在开发周期结束时合并大的更改。目的是通过以较小的增量开发和测试来构建更健康的软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Travis CI 部署 Hexo 博客">
+<meta property="og:url" content="https://supertrampai.github.io/2019/09/26/使用Travis-CI-部署-Hexo-博客/index.html">
+<meta property="og:site_name" content="XH Li&#39;s blog - Thinking Doing  Being">
+<meta property="og:description" content="Travis_CI是什么wiki Travis 是一项托管集成服务，用于构建和测试Github上托管的软件项目 什么是继续集成：持续集成是经常合并小的代码更改的实践，而不是在开发周期结束时合并大的更改。目的是通过以较小的增量开发和测试来构建更健康的软件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926102046544-1241401079.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926095941334-38661650.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926100821412-701824904.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926101012480-1078141381.png">
+<meta property="og:updated_time" content="2019-11-04T13:31:13.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Travis CI 部署 Hexo 博客">
+<meta name="twitter:description" content="Travis_CI是什么wiki Travis 是一项托管集成服务，用于构建和测试Github上托管的软件项目 什么是继续集成：持续集成是经常合并小的代码更改的实践，而不是在开发周期结束时合并大的更改。目的是通过以较小的增量开发和测试来构建更健康的软件">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926102046544-1241401079.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://supertrampai.github.io/2019/09/26/使用Travis-CI-部署-Hexo-博客/">
+
+
+
+
+
+  <title>使用Travis CI 部署 Hexo 博客 | XH Li's blog - Thinking Doing  Being</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XH Li's blog - Thinking Doing  Being</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">路漫漫其修远兮，吾将上下而求索</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://supertrampai.github.io/2019/09/26/使用Travis-CI-部署-Hexo-博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李祥洪">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/myhead.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XH Li's blog - Thinking Doing  Being">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用Travis CI 部署 Hexo 博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-26T09:22:57+00:00">
+                2019-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+					
+					
+						<span class="post-meta-divider">|</span>
+						<span id="busuanzi_value_page_pv"></span>次阅读
+					
+			
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  914
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Travis_CI是什么<br><a href="https://en.wikipedia.org/wiki/Travis_CI" target="_blank" rel="noopener">wiki</a> Travis 是一项托管集成服务，用于构建和测试Github上托管的软件项目</p>
+<p>什么是继续集成：<br>持续集成是经常合并小的代码更改的实践，而不是在开发周期结束时合并大的更改。目的是通过以较小的增量开发和测试来构建更健康的软件<br><a id="more"></a><br>解决了什么问题</p>
+<ol>
+<li>把发布博客的功能转交给了Travis，Travis读取github上面的源码，来进行构建。你要做的只能把file.md文件推送到github</li>
+</ol>
+<p>本文档操作流程：</p>
+<ol>
+<li>把hexo github的源码托管在github</li>
+<li>在github上生成token</li>
+<li>在travis中使用github帐号登录</li>
+<li>在github源码中加入.travis.yml配置文件</li>
+</ol>
+<h2 id="1-把hexo-github的源码托管在github"><a href="#1-把hexo-github的源码托管在github" class="headerlink" title="1.把hexo github的源码托管在github"></a>1.把hexo github的源码托管在github</h2><p>把代码托管在github上有两种方式：</p>
+<ol>
+<li>新建一个独立的仓库</li>
+<li>在你的username.github.io 仓库下，使用分支托管</li>
+</ol>
+<p>本文使用方式二，进行操作。</p>
+<ol>
+<li><p>新建分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --orphan hdoc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除该分支下的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -rf .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -am &quot;message&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在该分支下没有文件，在github网页上，不可见该分支<br>创建文件，并上传，查看是否分支创建成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">touch text.txt 创建文件</span><br><span class="line">vim text.txt  打开文件 键入 “i” 输入测试文本内容 按“Esc” 输入“:wq” 保存退出</span><br><span class="line">git add . 添加更新</span><br><span class="line">git commit -m &quot;message&quot;</span><br><span class="line">git push(如果该方式无法执行成功，使用如下命令：git push origin hdoc:hdoc（hodc为你刚刚创建的分支）;拉去代码的命令为：git pull origin hdoc:hdoc(hdoc为分支名)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以上命令以后，就可以在github页面上，看到你的分支</p>
+<p>然后，在该分支下，把你的github源码粘贴到在分支下，并使用上面的命令提交代码：git add/commit/push<br>上传的github代码文件可如图：<br><img src="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926102046544-1241401079.png" alt></p>
+<h3 id="在github上生成token"><a href="#在github上生成token" class="headerlink" title="在github上生成token"></a>在github上生成token</h3><p><a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a></p>
+<p>按图操作即可<br><img src="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926095941334-38661650.png" alt></p>
+<p>在保存完该页面以后，下一个页面就会出现token，在这里保存下来，会提示你：在以后不会再出现。切记！</p>
+<h3 id="在travis中使用github帐号登录"><a href="#在travis中使用github帐号登录" class="headerlink" title="在travis中使用github帐号登录"></a>在travis中使用github帐号登录</h3><p><a href="https://travis-ci.org/" target="_blank" rel="noopener">https://travis-ci.org/</a> 使用你的github帐号登录</p>
+<p>然后：<br><img src="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926100821412-701824904.png" alt></p>
+<p>继续 在输入name（该name在github的配置文件中需要使用），value为你刚才github token 然后add保存<br><img src="https://img2018.cnblogs.com/blog/1273088/201909/1273088-20190926101012480-1078141381.png" alt></p>
+<h3 id="在github源码中加入-travis-yml配置文件"><a href="#在github源码中加入-travis-yml配置文件" class="headerlink" title="在github源码中加入.travis.yml配置文件"></a>在github源码中加入.travis.yml配置文件</h3><p>.travis.yml配置内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># 指定语言环境</span><br><span class="line">language: node_js</span><br><span class="line"># 指定需要sudo权限</span><br><span class="line">sudo: required</span><br><span class="line"># 指定node_js版本</span><br><span class="line">node_js:</span><br><span class="line">  - 10.16.3</span><br><span class="line"># 指定缓存模块，可选。建议开启，</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"># 指定博客源码分支，因人而异。hexo博客源码托管在独立repo则不用设置此项</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - hdoc # 为你创建的分支名</span><br><span class="line"></span><br><span class="line">before_install:</span><br><span class="line">  - npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"># Start: Build Lifecycle</span><br><span class="line">install:</span><br><span class="line">  - npm install</span><br><span class="line">  - npm install hexo-deployer-git --save</span><br><span class="line"></span><br><span class="line"># 执行清缓存，生成网页操作</span><br><span class="line">script:</span><br><span class="line">  - hexo clean</span><br><span class="line">  - hexo generate</span><br><span class="line"></span><br><span class="line"># 设置git提交名，邮箱</span><br><span class="line">after_script:</span><br><span class="line">  - git config user.name &quot;username&quot;</span><br><span class="line">  - git config user.email &quot;user email&quot;</span><br><span class="line">  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！</span><br><span class="line">  # access_token为你在travis配中的变量名，自行更换，如果不一样，travis配置将不成功</span><br><span class="line">  - sed -i &quot;s/access_token/$&#123;ACCESS_TOKEN&#125;/g&quot; ./_config.yml</span><br><span class="line">  - hexo deploy</span><br><span class="line"># End: Build LifeCycle</span><br></pre></td></tr></table></figure></p>
+<p>修改_config.yml配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">修改前</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/SuperTrampAI/SuperTrampAI.github.io.git</span><br><span class="line"></span><br><span class="line">修改后</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://access_token@github.com/SuperTrampAI/SuperTrampAI.github.io.git</span><br></pre></td></tr></table></figure></p>
+<p>然后新建md文件，推送到github。travis自动构建</p>
+<p>参考：<br><a href="https://juejin.im/post/5a1fa30c6fb9a045263b5d2a" target="_blank" rel="noopener">travis</a><br><a href="https://zhuanlan.zhihu.com/p/37014376" target="_blank" rel="noopener">travis</a><br><a href="https://segmentfault.com/a/1190000004931751" target="_blank" rel="noopener">创建空白分支</a><br><a href="https://blog.csdn.net/liuxiao723846/article/details/55191669" target="_blank" rel="noopener">git 创建本地分支、提交到远程分支</a></p>
+
+      
+    </div>
+    
+    
+    
+
+
+		<div>
+      
+        
+      
+		</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wxgzh8.jpg" alt="李祥洪 wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/22/2019-9-22/" rel="next" title="2019-9-22">
+                <i class="fa fa-chevron-left"></i> 2019-9-22
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/07/国庆假期会回老家，我收获了什么/" rel="prev" title="国庆假期回老家，我收获了什么">
+                国庆假期回老家，我收获了什么 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+      <div id="gitalk-container">
+      </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/myhead.jpg" alt="李祥洪">
+            
+              <p class="site-author-name" itemprop="name">李祥洪</p>
+              <p class="site-description motion-element" itemprop="description">功力必不唐娟</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SuperTrampAI" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:lxh800109@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/32468b3406de" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitbook.supertrampai.com/" target="_blank" title="GitBook">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitBook</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-把hexo-github的源码托管在github"><span class="nav-text">1.把hexo github的源码托管在github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在github上生成token"><span class="nav-text">在github上生成token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在travis中使用github帐号登录"><span class="nav-text">在travis中使用github帐号登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在github源码中加入-travis-yml配置文件"><span class="nav-text">在github源码中加入.travis.yml配置文件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李祥洪</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">94.2k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+<!--
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+<span class="post-count">博客全站共94.2k字</span>
+</div>
+ -->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '7a9c75992689680c945d',
+		  clientSecret: 'ff77f9716c7edc6f716353e10c21ecd2b241d4c9',
+		  repo: 'blog-comments',
+		  owner: 'SuperTrampAI',
+		  admin: ['SuperTrampAI'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

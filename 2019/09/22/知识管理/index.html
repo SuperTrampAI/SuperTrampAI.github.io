@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('enter password') !== '') {
+                alert('wrong password！');
+                if (history.length === 1) {
+                    location.replace("https://supertrampai.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favcion.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favcion.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么需要知识管理 互联网上的信息泛滥，一个人一辈子再也无法穷尽一个领域的知识。同时，泛滥的信息不是知识，数据不是知识，需要进行筛选，筛选过后的知识如何处理，也就是知识管理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知识管理">
+<meta property="og:url" content="https://supertrampai.github.io/2019/09/22/知识管理/index.html">
+<meta property="og:site_name" content="XH Li&#39;s blog - Thinking Doing  Being">
+<meta property="og:description" content="为什么需要知识管理 互联网上的信息泛滥，一个人一辈子再也无法穷尽一个领域的知识。同时，泛滥的信息不是知识，数据不是知识，需要进行筛选，筛选过后的知识如何处理，也就是知识管理。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4319370-b29f78c4430865c4.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4319370-3f084ae9c13c67ae.jpg">
+<meta property="og:updated_time" content="2019-11-04T13:31:13.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="知识管理">
+<meta name="twitter:description" content="为什么需要知识管理 互联网上的信息泛滥，一个人一辈子再也无法穷尽一个领域的知识。同时，泛滥的信息不是知识，数据不是知识，需要进行筛选，筛选过后的知识如何处理，也就是知识管理。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4319370-b29f78c4430865c4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://supertrampai.github.io/2019/09/22/知识管理/">
+
+
+
+
+
+  <title>知识管理 | XH Li's blog - Thinking Doing  Being</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XH Li's blog - Thinking Doing  Being</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">路漫漫其修远兮，吾将上下而求索</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://supertrampai.github.io/2019/09/22/知识管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李祥洪">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/myhead.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XH Li's blog - Thinking Doing  Being">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">知识管理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-22T20:23:28+00:00">
+                2019-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/default/" itemprop="url" rel="index">
+                    <span itemprop="name">default</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+					
+					
+						<span class="post-meta-divider">|</span>
+						<span id="busuanzi_value_page_pv"></span>次阅读
+					
+			
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>为什么需要知识管理</p>
+<p>互联网上的信息泛滥，一个人一辈子再也无法穷尽一个领域的知识。同时，泛滥的信息不是知识，数据不是知识，需要进行筛选，筛选过后的知识如何处理，也就是知识管理。<br><a id="more"></a></p>
+<blockquote>
+<p>穷尽一个领域的知识，不是我们目的，目的在于如何更好的解决生活中实际的问题。</p>
+</blockquote>
+<p>在互联网时代，信息触手可及。“精英”和“其他人”，信息对于两者的暴露程度是一样的，只要想要，就能够得到。但是，是什么决定了两者的区别。就如，在搜索引擎领域，一种叫Google,一种叫“其他”（对于Google的‘情怀’）。</p>
+<blockquote>
+<p>Google又调皮了</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/4319370-b29f78c4430865c4.jpg" alt="递归分形"></p>
+<blockquote>
+<p>找到核心领域的核心知识；找到核心领域的核心领域的核心知识；找到核心领域的核心领域的核心领域的核心知识。<br><a href="https://www.jianshu.com/p/fe1f1e8de8d0" target="_blank" rel="noopener">如何使用Google</a><br>通过Google能够获得大量的信息，无论一个冷门的话题，还是一篇学术论文，还是某个文档。而人与人之间的区别，在以前，在于接触到信息的多少决定。比如一个公司的CEO和门卫，两者之间做出决策的差距，在于掌握信息的多少。而现在，取决于对于知识的认知。</p>
+</blockquote>
+<p>那是否信息不再重要？反而不是，在这样一个信息爆炸的时代，作为一个知识工作者，对于信息的处理，反而显得更重要。在需要要到时，能够快速的找到相关知识。</p>
+<blockquote>
+<p>外包大脑：更重要的不再是你记住了多少知识，而在于你是否知道相应的知识能够通过什么样的方式找到（或人或Google还是“其他”的搜索引起）</p>
+</blockquote>
+<p>看到这篇文章的你，大概率的也是一个知识工作者。</p>
+<p>一个人对于信息的的路径，大概是下面一张图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4319370-3f084ae9c13c67ae.jpg" alt="《你的知识需要管理》"></p>
+<blockquote>
+<p>输入，保存，共享，使用，创新。</p>
+</blockquote>
+<p>是否还可以在加入其他对待知识的步骤呢？<br>比如在保存前：思考</p>
+<p>而不是以保存了多少个G的“知识”为目标，为荣。</p>
+<p>以及知识的可用性，也许在使用当时场景下的解决方案，放到此刻，少了很多实用性。</p>
+<p>下面是在多方输入以后，对待知识的一个途径：</p>
+<p><strong>输入，思考，保存，使用，分享，创新。</strong><br>(鼓励你有自己对待知识的方式，欢迎你和我分享你的知识，一起思考，迭代)</p>
+<p>最开始有<strong>输入</strong>,在输入同时，独立<strong>思考</strong>这个知识是否可证伪，是否和原有的知识体系能够产生关联，保存到自己的知识体系里面，而后，在遇到问题的时候，<strong>使用</strong>知识解决问题，而后<strong>分享</strong>知识，<strong>创新</strong>…..。</p>
+<p>知识本身的体量和速度都在加快</p>
+<p>在50年代工作的人，大学毕业的人，可以在一个公司一直干到退休，而在现在，知识更新的速度，行业变化，在科技领域，可能几年一个公司就完成了一个轮回。如果有五年不学习，可能在就业市场上，你的竞争力就不复存在。</p>
+<p>而现在的知识更新的速度，在呈现指数级的增加，在你意识到自己要学习以后，这么多的知识你要怎么学？学什么？学到什么程度？学什么能够提高你的竞争力?</p>
+<p>通过自己搜索信息是学习，那是否还有其他的学习方式？与高人交流是否也是学习？甚至是最高效的学习方式。</p>
+<blockquote>
+<p>在遇到问题的时候，不是自己搜索相关知识，而是去咨询相关领域的专家？</p>
+</blockquote>
+<p>需要输入的信息如此的多，选择什么样的信息输入呢？</p>
+<blockquote>
+<p>已目标为导向，已解决实际问题为出发点</p>
+</blockquote>
+<p>输入什么样的信息，核心在于你想去往哪里，目的地在哪。</p>
+<p>你是一辆什么样的车，和什么样的人同行，沿途会经过哪里，会遇到哪些问题，在你到达终点的时候，希望看到什么样的风景。</p>
+<p>目的地由你的价值观决定，即你认为什么是最重要的。</p>
+<blockquote>
+<p>事业和家庭你认为哪个更重要<br>金钱和意义哪个更重要<br>……</p>
+</blockquote>
+<p>在软件开发领域，学习的语言就有无数种，在每一门语言下面还有各种职位，每一个细分领域都是一个黑匣子。你无法穷尽所有的知识点，而你的竞争力由你的专业深度决定。而不在于你学了多少，掌握程度为百分之七十的技能。</p>
+<p>当你确定了目标，在一个核心专业上，死磕到底。</p>
+<p>目标是一个框架，决定了你去往哪里。而路上遇到的问题，你采取什么样的方式去解决；带上什么样的工具。在于你在这个框架上，搭建与一个个具体的<strong>模块</strong>。</p>
+<h4 id="保存知识–方便快捷的找到"><a href="#保存知识–方便快捷的找到" class="headerlink" title="保存知识–方便快捷的找到"></a>保存知识–方便快捷的找到</h4><p>软件如此强大的一天，如果你还是使用纸，记录你的知识，会不是有些”原始“？</p>
+<p><strong>印象笔记</strong>,实用的一款软件。是一款云端笔记<br>看看有价值的文章，标记一个tags(标签)，剪切到印象笔记里面<br>在微信端，”我的印象笔记“一键剪切。<br>在PC端，在浏览器里面有印象笔记的插件。</p>
+<p>有着强大的搜索功能，可以搜索图片，pdf等文件里面的文字<br>保存知识的前提是：有足够多质量的信息来保存，在下一篇文章中，会谈到Google的搜索技巧（珍爱生命，远离某度）。</p>
+<h4 id="知识共享–让别人知道你知道"><a href="#知识共享–让别人知道你知道" class="headerlink" title="知识共享–让别人知道你知道"></a>知识共享–让别人知道你知道</h4><p>一个你比分享<strong>内在</strong>更快捷，高效的方法：通过你的外在。优雅的身材，强健的体魄，马甲线。</p>
+<p>而作为一个知识工作者，如果无法在短时间内让人知道你知道，那就需要平时的积累，每时每刻都在传播知识。</p>
+<p>为什么知识的分享是有必要的？<br>1.能够让别人知道你是某方面的专家<br>2.主动的传播知识，可以创造各种各样的机会<br>3.能够链接更多的人，在不同的圈子里面，营造影响力</p>
+<h4 id="知识的使用–-让知识创造价值"><a href="#知识的使用–-让知识创造价值" class="headerlink" title="知识的使用– 让知识创造价值"></a>知识的使用– 让知识创造价值</h4><p>”听了这么多道理，依然过不好这一生“<br>这句话的核心本质问题出自就在于，你没有利用知识去创造价值。不是知识无用，而你没”用“。</p>
+<p>学会了知识是否改变了你的思考方式；是否解决了你的问题；是否提高你的生存效率和产品质量，甚至更直接的，是否挣了足够多的钱，改善了你的生活。</p>
+<p>知识改变命运</p>
+<p>如果这句话没有在你身上印证，请记住，不是知识的问题，是你的问题。</p>
+<p>书单：<br>《你的知识需要管理》<br>《跃迁》<br>《第五项修炼》<br>《好好学习》</p>
+
+      
+    </div>
+    
+    
+    
+
+
+		<div>
+      
+        
+      
+		</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wxgzh8.jpg" alt="李祥洪 wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/22/概率论-明天太阳是否还会照常升起/" rel="next" title="概率论-明天太阳是否还会照常升起">
+                <i class="fa fa-chevron-left"></i> 概率论-明天太阳是否还会照常升起
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/22/如何缓解你的焦虑/" rel="prev" title="如何缓解你的焦虑">
+                如何缓解你的焦虑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+      <div id="gitalk-container">
+      </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/myhead.jpg" alt="李祥洪">
+            
+              <p class="site-author-name" itemprop="name">李祥洪</p>
+              <p class="site-description motion-element" itemprop="description">功力必不唐娟</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SuperTrampAI" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:lxh800109@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/32468b3406de" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitbook.supertrampai.com/" target="_blank" title="GitBook">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitBook</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#保存知识–方便快捷的找到"><span class="nav-text">保存知识–方便快捷的找到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识共享–让别人知道你知道"><span class="nav-text">知识共享–让别人知道你知道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识的使用–-让知识创造价值"><span class="nav-text">知识的使用– 让知识创造价值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李祥洪</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">94.2k</span>
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+<!--
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+<span class="post-count">博客全站共94.2k字</span>
+</div>
+ -->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '7a9c75992689680c945d',
+		  clientSecret: 'ff77f9716c7edc6f716353e10c21ecd2b241d4c9',
+		  repo: 'blog-comments',
+		  owner: 'SuperTrampAI',
+		  admin: ['SuperTrampAI'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
